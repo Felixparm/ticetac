@@ -21,6 +21,14 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: 'Express' });
 });
 
+router.get('/index', function(req, res, next) {
+
+  
+  res.render('index', { title: 'Express' });
+});
+
+
+
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
