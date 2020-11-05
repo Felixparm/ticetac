@@ -12,14 +12,8 @@ background-repeat: no-repeat;
   background-color: #E4E4E4;
   height: 10%;
 }
-
-a {
-  color: #00B7FF;
-}
-
 input{
   width: 20px;
-
 }
 button{
   background-color: red;
@@ -36,4 +30,13 @@ h4{
 #lienNav{
   display: flex;
   justify-content: flex-end;
+  font-size: 15px;
+}
+#lienNav, a{
+  color: black;
+}
+#indexrow{
+  display: flex;
+  margin-top: 7%;
+  justify-content: center;
 }
