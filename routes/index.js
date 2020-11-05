@@ -10,6 +10,11 @@ var options = {
   useUnifiedTopology: true
  };
 
+ var userModel = require('../model/users')
+
+ var journeyModel = require('../model/journey')
+
+
 // --------------------- BDD -----------------------------------------------------
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
@@ -20,7 +25,7 @@ router.get('/', function(req, res, next) {
 
   res.render('login', { title: 'Express' });
 });
-router.post('/sign-up', function (req,res, next){
+router.post('/sign-up', async function (req,res, next){
 
   var searchUser = await userModel.findOne({
     email: req.body.emailFromFront
