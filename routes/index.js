@@ -17,10 +17,37 @@ var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  
+
   res.render('login', { title: 'Express' });
 });
+router.post('/sign-up', function (req,res, next){
 
+  var searchUser = await userModel.findOne({
+    email: req.body.emailFromFront
+  })
+  
+  if(!searchUser){
+    var newUser = new userModel({
+      username: req.body.usernameFromFront,
+      email: req.body.emailFromFront,
+      password: req.body.passwordFromFront,
+    })
+  
+    var newUserSave = await newUser.save();
+  
+    req.session.user = {
+      name: newUserSave.username,
+      id: newUserSave._id,
+    }
+  
+    console.log(req.session.user)
+  
+    res.redirect('/')
+  } else {
+    res.redirect('/')
+  }
+
+})
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
