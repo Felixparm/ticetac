@@ -6,7 +6,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
  <body>
+
 <!-- NAV BAR -->
+
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img src="./images/train.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -17,23 +19,28 @@
       <a href="#"> My last tripe</a>
     </div>
   </nav>
-<div id="indexrow">
-  <div class="col-12 col-sm-2 text-center">
-  
-    
-      
-      <h4 class="titleForm">One-way ticket :</h4>
-  
-      <form action="/sign-in" method="POST">
-        <div class="form-group">
-          <input name="passwordFromFront" type="text" class="form-control" placeholder="From: Paris, Marseille...">
-        </div>
-        <div class="form-group">
-          <input name="passwordFromFront" type="text" class="form-control" placeholder="To: Lille, Nantes">
-        </div>
-      
-    </div>
-</div>
 
+  <!-- formulaire -->
+
+<div id="row">
+  <div class="col-12 col-sm-6 text-center">
+      <h4 class="titleForm">One-way ticket :</h4>
+      <form action="/" method="POST" style="display: flex;">
+        
+          <input name="passwordFromFront" type="text" class="form-control" style="margin-left: 10px;" placeholder="From: Paris, Marseille...">
+        
+          <input name="passwordFromFront" type="text" class="form-control" style="margin-left: 10px;" placeholder="To: Lille, Nantes">
+       
+        
+          <button type="submit" class="btn btn-danger" style="margin-left: 10px;">GO</button>
+        
+      </form> 
+  </div> 
+</div>
+<div id="row">
+<div class="col-12 col-sm-2 text-center">
+  <img src="./images/landmark.png" height="300px" alt="">
+</div>
+</div>
   </body>
 </html>

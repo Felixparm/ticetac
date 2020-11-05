@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 
   res.render('login', { title: 'Express' });
 });
-router.post('/sign-up', function (req,res, next){
+router.post('/sign-up',async function (req,res, next){
 
   var searchUser = await userModel.findOne({
     email: req.body.emailFromFront
