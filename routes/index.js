@@ -53,13 +53,34 @@ router.post('/sign-up', async function (req,res, next){
   }
 
 })
+
+router.post('/sign-in', async function(req,res,next){
+
+  var searchUser = await userModel.findOne({
+    email: req.body.emailFromFront,
+    password: req.body.passwordFromFront
+  })
+
+  if(searchUser!= null){
+    req.session.user = {
+      name: searchUser.username,
+      id: searchUser._id
+    }
+    res.redirect('/index')
+  } else {
+    res.redirect('/')
+  }
+
+  
+})
+
+
+
 router.get('/index', function(req, res, next) {
 
   
   res.render('index', { title: 'Express' });
 });
-
-
 
 
 // Remplissage de la base de donnée, une fois suffit
@@ -114,5 +135,12 @@ router.get('/result', function(req, res, next) {
 
   res.render('index', { title: 'Express' });
 });
+
+router.get('/error', function(req, res, next) {
+
+
+  res.render('error');
+});
+
 
 module.exports = router;
