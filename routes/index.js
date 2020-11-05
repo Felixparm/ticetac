@@ -21,7 +21,11 @@ var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 /* GET home page. */
 
+router.get('/login', function(req, res, next) {
 
+
+  res.render('login', { title: 'Express' });
+});
 
 
 
@@ -84,10 +88,10 @@ router.get('/index', function(req, res, next) {
 res.render('index', { title: 'Express' });
 });
 
-router.get('/resultat', function(req, res, next) {
+router.get('/voyage', function(req, res, next) {
 
 
-res.render('index', { title: 'Express' });
+res.render('voyage', { title: 'Express' });
 });
 
 
