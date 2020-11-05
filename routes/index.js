@@ -42,7 +42,7 @@ router.post('/sign-up', function (req,res, next){
   
     console.log(req.session.user)
   
-    res.redirect('/')
+    res.redirect('/index')
   } else {
     res.redirect('/')
   }
