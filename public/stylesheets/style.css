@@ -17,4 +17,23 @@ a {
   color: #00B7FF;
 }
 
+input{
+  width: 20px;
 
+}
+button{
+  background-color: red;
+}
+h4{
+  color: aliceblue;
+}
+#row{
+  
+  display: flex;
+  margin-top: 7%;
+  justify-content: center;
+}
+#lienNav{
+  display: flex;
+  justify-content: flex-end;
+}

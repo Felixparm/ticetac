@@ -48,6 +48,14 @@ router.post('/sign-up', function (req,res, next){
   }
 
 })
+router.get('/index', function(req, res, next) {
+
+  
+  res.render('index', { title: 'Express' });
+});
+
+
+
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
