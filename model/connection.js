@@ -1,4 +1,13 @@
-mongoose.connect('mongodb+srv://XXXXXXXX:*********@XXXXXXXX-0hsfc.mongodb.net/Ticketac?retryWrites=true',
+var mongoose = require('mongoose');
+
+var options = {
+    connectTimeoutMS: 5000,
+    useUnifiedTopology : true,
+    useNewUrlParser: true,
+}
+
+
+mongoose.connect('mongodb+srv://felixparmentier:felixparmentier@cluster0.2qce4.mongodb.net/ticetac?retryWrites=true&w=majority',
    options,
    function(err) {
     if (err) {
@@ -9,15 +18,6 @@ mongoose.connect('mongodb+srv://XXXXXXXX:*********@XXXXXXXX-0hsfc.mongodb.net/Ti
    }
 );
 
-var journeySchema = mongoose.Schema({
-  departure: String,
-  arrival: String,
-  date: Date,
-  departureTime: String,
-  price: Number,
-});
 
-var journeyModel = mongoose.model('journey', journeySchema);
-
-
+module.exports = mongoose;
 
