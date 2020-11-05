@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+height:50rem ;
+
+background: linear-gradient(to bottom, #7db9e8 0% ,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+background-repeat: no-repeat;
+}
+
+#bandeau{
+  background-color: #E4E4E4;
+  height: 10%;
 }
 
 a {
   color: #00B7FF;
 }
+
+
