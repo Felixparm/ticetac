@@ -98,9 +98,7 @@ router.get('/panier', function(req, res, next) {
   {
     req.session.basketVoyage=[];
   }
-  /*indiceVoyage=req.query.iDvoyage;*/
-  
-
+ 
   req.session.basketVoyage.push(
     {
       depart: req.query.depart,
@@ -111,7 +109,8 @@ router.get('/panier', function(req, res, next) {
 
     }
   )
-
+  console.log(req.session.basketVoyage);
+  
   res.render('panier', { basketVoyage:req.session.basketVoyage });
   });
 // Remplissage de la base de donnée, une fois suffit
