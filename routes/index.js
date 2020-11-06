@@ -82,6 +82,8 @@ router.post('/sign-in', async function(req,res,next){
 
   
 })
+
+
 router.get('/index', function(req, res, next) {
 res.render('index', { title: 'Express' });
 });
@@ -114,10 +116,11 @@ router.get('/panier', function(req, res, next) {
   res.render('panier', { basketVoyage:req.session.basketVoyage });
   });
 
-  router.get('/lasttrip',function (req,res,next){
+  router.get('/trips',function (req,res,next){
 
-  var lasttrip=req.session.basketVoyage[basketVoyage.length-1];
-  console.log(lasttrip);
+  req.session.lasttrip=req.session.basketVoyage[req.session.basketVoyage.length-1];
+  console.log('the last trip:'+req.session.lasttrip.depart);
+  res.render('trips',{lasttrip:req.session.lasttrip})
   })
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
