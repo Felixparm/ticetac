@@ -34,12 +34,12 @@
             
             <h5><%=dataVoyage[i].departure%> / <%=dataVoyage[i].arrival%></h5>
             
-            <p>départ a :<%=dataVoyage[i].date%></p>
+            <p>départ a :<%=dataVoyage[i].date%><%=dataVoyage[i].departureTime%></p>
             
             
             <span ><h5><%=dataVoyage[i].price%>€</h5></span >
             
-            <button type="submit" class="btn btn-danger" style="margin-left: 10px ">OK</button>
+            <a href='/panier?depart=<%=dataVoyage[i].departure%>&arriver=<%=dataVoyage[i].arrival%>&price=<%=dataVoyage[i].price%>&date=<%=dataVoyage[i].date%>&time=<%=dataVoyage[i].departureTime%>'><button type="submit" class="btn btn-danger" style="margin-left: 10px ">OK</button></a> 
           </li>
           <%}%>
         </ul>

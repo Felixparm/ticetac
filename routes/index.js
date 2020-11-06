@@ -93,7 +93,25 @@ res.render('voyage',{dataVoyage:dataVoyage});
 });
 
 router.get('/panier', function(req, res, next) {
-  res.render('panier', { title: 'Express' });
+   
+  if(req.session.basketVoyage==undefined)
+  {
+    req.session.basketVoyage=[];
+  }
+ 
+  req.session.basketVoyage.push(
+    {
+      depart: req.query.depart,
+      arriver:req.query.arriver,
+      date:req.query.date,
+      time:req.query.time,
+      price:req.query.price
+
+    }
+  )
+  console.log(req.session.basketVoyage);
+  
+  res.render('panier', { basketVoyage:req.session.basketVoyage });
   });
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
