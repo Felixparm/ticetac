@@ -92,7 +92,7 @@ router.post('/voyage', async function(req, res, next) {
 res.render('voyage',{dataVoyage:dataVoyage});
 });
 
-
+ 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
 
