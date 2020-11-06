@@ -83,19 +83,18 @@ router.post('/sign-in', async function(req,res,next){
   
 })
 router.get('/index', function(req, res, next) {
-
-
 res.render('index', { title: 'Express' });
 });
 
+
 router.get('/voyage', function(req, res, next) {
-
-
 res.render('voyage', { title: 'Express' });
 });
 
 
-
+router.get('/error', function(req, res, next) {
+  res.render('error');
+  });
 
 
 
@@ -152,11 +151,7 @@ router.get('/result', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/error', function(req, res, next) {
 
-
-  res.render('error');
-});
 
 
 module.exports = router;
