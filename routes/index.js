@@ -88,10 +88,13 @@ router.get('/index', function(req, res, next) {
 res.render('index', { title: 'Express' });
 });
 
-router.get('/voyage', function(req, res, next) {
+router.post('/voyage', async function(req, res, next) {
+   
+  var dataVoyage = await journeyModel.find({departure:req.body.depart, arrival:req.body.arriver, date:req.body.date})
+  
+  console.log(dataVoyage);
 
-
-res.render('voyage', { title: 'Express' });
+res.render('voyage', { dataVoyage});
 });
 
 
