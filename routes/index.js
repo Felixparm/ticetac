@@ -113,6 +113,12 @@ router.get('/panier', function(req, res, next) {
   
   res.render('panier', { basketVoyage:req.session.basketVoyage });
   });
+
+  router.get('/lasttrip',function (req,res,next){
+
+  var lasttrip=req.session.basketVoyage[basketVoyage.length-1];
+  console.log(lasttrip);
+  })
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
 
