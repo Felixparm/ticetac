@@ -117,10 +117,17 @@ router.get('/panier', function(req, res, next) {
   });
 
   router.get('/trips',function (req,res,next){
-
+  
+  
+    if(req.session.basketVoyage){
+  
   req.session.lasttrip=req.session.basketVoyage[req.session.basketVoyage.length-1];
-  console.log('the last trip:'+req.session.lasttrip.depart);
-  res.render('trips',{lasttrip:req.session.lasttrip})
+  console.log('the last trip:'+req.session.lasttrip.depart); }
+  else
+  {
+    req.session.lasttrip=[];
+  }
+  res.render('trips',{lasttrip:req.session.lasttrip}) 
   })
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
