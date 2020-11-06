@@ -22,21 +22,25 @@
 
 <div id="row">
   <div class="col-12 col-sm-10 text-center ">
-    
+    <% if(dataVoyage.length == 0){%>
+      <span class="empty">Dans ton cul !!!</span>
+    <%}%>
         <div id="balisevoyage">
         <ul class="list-group">
+          <% for(let i=0; i<dataVoyage.length;i++){%>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <div>
-            <h5>Paris / Lille</h5>
+            <h5><%=dataVoyage[i].departure%> / <%=dataVoyage[i].arrival%></h5>
             </div>
             <div>
-            <p>depart a 12H39</p>
+            <p>depart a <%=dataVoyage[i].date%></p>
             </div>
             <div>
-            <span><h5>9lhbnlkjkj,9€</h5></span>
+            <span><h5><%=dataVoyage[i].price%></h5></span>
             
             <button type="submit" class="btn btn-danger" style="margin-left: 10px;">OK</button>
           </li>
+          <%}%>
         </ul>
       </div>
   </div>

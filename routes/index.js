@@ -86,26 +86,11 @@ router.get('/index', function(req, res, next) {
 res.render('index', { title: 'Express' });
 });
 
-<<<<<<< HEAD
-
-router.get('/voyage', function(req, res, next) {
-res.render('voyage', { title: 'Express' });
-=======
 router.post('/voyage', async function(req, res, next) {
-   
-  var dataVoyage = await journeyModel.find({departure:req.body.depart, arrival:req.body.arriver, date:req.body.date})
-  
+  var dataVoyage = await journeyModel.find({departure:req.body.depart, arrival:req.body.arriver, date:new Date(req.body.date)})  
   console.log(dataVoyage);
-
-res.render('voyage', { dataVoyage});
->>>>>>> c944b365989895ffbd22b8bdb8afe6fcc8afcb94
+res.render('voyage',{dataVoyage:dataVoyage});
 });
-
-
-router.get('/error', function(req, res, next) {
-  res.render('error');
-  });
-
 
 
 // Remplissage de la base de donnée, une fois suffit
