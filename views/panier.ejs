@@ -35,7 +35,8 @@
             <th scope="col">Price</th> 
           </tr>
         </thead>
-        <% var total =1 - 1; %>
+        <% var total =0;
+         %>
         <tbody>
             <% 
             for(var i=0;i<basketVoyage.length;i++){
@@ -46,7 +47,7 @@
             <td><%= dateFormat(basketVoyage[i].date) %></td>
             <td><%= basketVoyage[i].time %></td>
             <td><%= basketVoyage[i].price %></td>
-            <% total += basketVoyage[i].price %>
+            <% total = total + basketVoyage[i].price*1 %>
           </tr>
           <%
                             }
