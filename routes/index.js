@@ -82,6 +82,12 @@ router.post('/sign-in', async function(req,res,next){
 
   
 })
+
+router.get('/trips', function(req, res, next) {
+  res.render('trips', { title: 'Express' });
+  });
+  
+
 router.get('/index', function(req, res, next) {
 res.render('index', { title: 'Express' });
 });
